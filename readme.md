@@ -12,6 +12,11 @@
 docker run --rm -it -v /Users/mac/code/gok8sbasic:/app -w /app  -e GOPROXY=https://goproxy.cn  -e CGO_ENABLED=0 -e GO111MODULE=on golang:1.15.4-alpine3.12 go build -o myserver  main.go
 # 
 docker run --name myweb -d -v /Users/mac/code/gok8sbasic:/app -w /app -p 80:8080 alpine:3.12 ./myserver
+
+
+
+
+
 ```
 
 
@@ -31,4 +36,10 @@ systemctl daemon-reload
 ```
 
 #### go脚本创建启动一个容器
+see run_docker_container.go
+
+#### nginx 反代go程序
+[nginx反代go](./nginx反代go.md)
+
+
 
