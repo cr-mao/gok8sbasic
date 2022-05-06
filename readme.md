@@ -1,8 +1,6 @@
 ## go k8s 基础
 
 
-
-
 #### 编译二进制文件，用另外一个容器启动这个二进制
 ```shell script
    docker pull golang:1.15.4-alpine3.12
@@ -17,7 +15,7 @@ docker run --name myweb -d -v /Users/mac/code/gok8sbasic:/app -w /app -p 80:8080
 ```
 
 
-#### 开发docker tcp 连接
+#### 开启docker tcp 连接
 ```text 
 
 对于centos7  文件在
