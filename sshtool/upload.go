@@ -8,7 +8,6 @@ import (
 	"net"
 
 	"golang.org/x/crypto/ssh"
-
 )
 
 func SSHConnect(user, password, host string, port int) (*ssh.Session, error) {
@@ -54,7 +53,7 @@ func Run() {
 	defer session.Close()
 	session.Stdout = &stdOut
 	session.Stderr = &stdErr
-	err = session.Run(build_script)
+	err = session.Run(build_script) //也可以执行个docker 命令 如 docker run --rm -it -v /Users/mac/code/gok8sbasic:/app -w /app  -e GOPROXY=https://goproxy.cn  -e CGO_ENABLED=0 -e GO111MODULE=on golang:1.15.4-alpine3.12 go build -o myserver  main.go
 	log.Println(stdOut.String())
 	log.Println(stdErr.String())
 	if err != nil {
